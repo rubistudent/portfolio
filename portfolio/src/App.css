@@ -15,7 +15,9 @@
 	font-weight: 400;
 }
 
+
 /************ Default Css ************/
+
 * {
   margin: 0;
   padding: 0;
@@ -29,11 +31,12 @@ html {
 
 body {
   font-weight: 400;
-  overflow-x: hidden;
-  position: relative;
-  background-color: #121212 !important;
-  color: #fff !important;
-  font-family: 'Centra', sans-serif !important;
+  position: absolute;
+  background-color: black !important;
+  color: yellow !important;
+  font-family: 'italics', italics !important;
+  box-shadow: #151515;
+  box-sizing: content-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,12 +58,12 @@ a:hover {
 
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 button {
-  border: 0;
-  background-color: transparent;
+  border: 25px;
+  background-color: blue;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -240,7 +243,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-repeat: no-repeat;
 }
 .banner .tagline {
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.8px;
   padding: 8px 10px;
   background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
@@ -459,7 +462,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .background-image-right {
   top: 20%;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 35%;
   right: 0;
@@ -494,7 +497,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .contact form input:focus, .contact form textarea:focus {
   background: rgba(255, 255, 255, 1);
-  color: #121212;
+  color: yellow;
 }
 .contact form input::placeholder, .contact form textarea::placeholder {
   font-size: 16px;
@@ -616,3 +619,112 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+/* Styling for the entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+}
+
+/* Styling for the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Styling for the navigation menu */
+nav {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Styling for the main content area */
+main {
+  padding: 20px;
+}
+
+/* Styling for the portfolio items */
+.portfolio-item {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.portfolio-item h2 {
+  margin-top: 0;
+}
+
+.portfolio-item p {
+  margin-bottom: 0;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Styling for the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+
+}
+
+.skill-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.skill-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skill-buttons button:hover {
+  background-color: #0062cc;
+}
+
+

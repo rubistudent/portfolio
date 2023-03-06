@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
@@ -8,6 +9,28 @@ import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
+  const [skills, setSkills] = useState([
+    { id: 1, name: "Web Development" },
+    { id: 2, name: "Design" },
+    { id: 3, name: "Computer Guru" },
+    { id: 4, name: "Game Designer" }
+  ]);
+
+  const [newSkill, setNewSkill] = useState("");
+
+  const handleAddSkill = () => {
+    if (newSkill) {
+      const newId = skills.length + 1;
+      setSkills([...skills, { id: newId, name: newSkill }]);
+      setNewSkill("");
+    }
+  }
+
+  const handleDeleteSkill = (id) => {
+    const updatedSkills = skills.filter(skill => skill.id !== id);
+    setSkills(updatedSkills);
+  }
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -35,24 +58,19 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        <p>My skills are improving day by day<br></br> Different skills.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
+                          {skills.map(skill => (
+                            <div className="item" key={skill.id}>
+                              <img src={meter1} alt="Image" />
+                              <h5>{skill.name}</h5>
+                              <button onClick={() => handleDeleteSkill(skill.id)}>Delete</button>
                             </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Brand Identity</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Logo Design</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
-                            </div>
+                          ))}
+                          <div className="item">
+                              <input type="text" value={newSkill} onChange={(e) => setNewSkill(e.target.value)} />
+                              <button onClick={handleAddSkill}>Add Skill</button>
+                          </div>
                         </Carousel>
                     </div>
                 </div>

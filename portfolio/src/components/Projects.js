@@ -23,7 +23,7 @@ function deleteProject(id){
     method: "DELETE"
   })
   .then(response => response.json())
-  .then(data=>console.log(data))
+  .then(()=>setProjects(projects.filter(project => project.id !== id)))
   .catch(error=>console.log(error))
 }
   
@@ -44,7 +44,7 @@ function deleteProject(id){
                       <Row>
                         {
                           
-                          projects.map((project, index,deleteProject) => {
+                          projects.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}

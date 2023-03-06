@@ -18,7 +18,14 @@ useEffect(()=>{
   .then(response=>response.json())
   .then(data=>setProjects(data))
 },[])
-
+function deleteProject(id){
+  fetch(`http://localhost:9292/project/${id}`,{
+    method: "DELETE"
+  })
+  .then(response => response.json())
+  .then(data=>console.log(data))
+  .catch(error=>console.log(error))
+}
   
   return (
     <section className="project" id="project">
@@ -31,28 +38,18 @@ useEffect(()=>{
                 <h2>Projects</h2>
                 <p>Different samples of projects.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second"> 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">3</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
+                  
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
                           
-                          projects.map((project, index) => {
+                          projects.map((project, index,deleteProject) => {
                             return (
                               <ProjectCard
                                 key={index}
                                 project={project}
-                            
+                            deleteProject={deleteProject}
 
                                 />
                             )

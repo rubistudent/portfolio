@@ -1,5 +1,5 @@
 import { Col,Button } from "react-bootstrap";
-export const ProjectCard = ({ project}) => {
+export const ProjectCard = ({ project}) => {,
   return (
     <Col size={12} sm={6} md={4}>
       <div className="proj-imgbx">

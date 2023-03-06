@@ -51,7 +51,7 @@ useEffect(()=>{
                             return (
                               <ProjectCard
                                 key={index}
-                                {...project}
+                                project={project}
                             
 
                                 />

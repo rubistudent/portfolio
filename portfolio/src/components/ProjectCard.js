@@ -1,5 +1,4 @@
-import { Col } from "react-bootstrap";
-
+import { Col,Button } from "react-bootstrap";
 export const ProjectCard = ({ project}) => {
   return (
     <Col size={12} sm={6} md={4}>
@@ -9,6 +8,7 @@ export const ProjectCard = ({ project}) => {
           <h4>{project.title}</h4>
           <span>{project.description}</span>
         </div>
+        <Button variant="danger">Danger</Button>
       </div>
     </Col>
   )

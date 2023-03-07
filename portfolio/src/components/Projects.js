@@ -7,10 +7,7 @@ import TrackVisibility from 'react-on-screen';
 import { useEffect } from "react";
 import { useState } from "react";
 
-
-
-
-export const Projects = () => {
+ const Projects = () => {
 
   const[projects,setProjects] = useState([])
 useEffect(()=>{
@@ -23,7 +20,7 @@ function deleteProject(id){
     method: "DELETE"
   })
   .then(response => response.json())
-  .then(()=>setProjects(projects.filter(project => project.id !== id)))
+  .then(data=>console.log(data))
   .catch(error=>console.log(error))
 }
   
@@ -44,7 +41,7 @@ function deleteProject(id){
                       <Row>
                         {
                           
-                          projects.map((project, index) => {
+                          projects.map((project, index,deleteProject) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -75,3 +72,4 @@ function deleteProject(id){
     </section>
   )
 }
+export default Projects
